@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>page title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><h1 id="header">Header</h1></header>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Articles</a></li>
+        </ul>
+      </nav>
+      <article>
+        <h2>Article heading</h2>
+        <p>Paragraph...</p>
+        <a href="https://www.google.com/">More information...</a>
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4E12AQFfe1nZbaWdMw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698604163003?e=2147483647&v=beta&t=zrcrB8lfoVmZo0LcSLgut3A_4PwE6YFe9EK3iy17L2Y"
+          alt="Javascript Logo"
+          style="width: 140px; height: 80px"
+        />
+      </article>
+      <aside id="aside">
+        <h2>Related</h2>
+        <ul>
+          <li><a href="#">Article 1</a></li>
+          <li><a href="#">Article 2</a></li>
+        </ul>
+      </aside>
+    </section>
+    <footer>
+      <p>@copyright 2050 by nobody. all rights reversed</p>
+    </footer>
+    <script>
+      document.getElementById("header").innerText = "Hello JavaScript";
+      document.getElementById("aside").style.backgroundColor = "green";
+      console.log("this is a Message");
+      console.info("this is info");
+      console.warn("this is a warning");
+      console.error("this is an error");
+    </script>
+  </body>
+</html>
