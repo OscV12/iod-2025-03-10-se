@@ -18,8 +18,8 @@ function divide(a, b) {
   return a / b;
 }
 
-let num1 = 1298;
-let num2 = 587;
+let num1 = 10;
+let num2 = 5;
 
 console.log("Addition: " + add(num1, num2));
 console.log("Subtraction: " + subtract(num1, num2));
