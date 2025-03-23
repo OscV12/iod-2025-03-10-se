@@ -1,6 +1,6 @@
 // exercise7.test.js
 
-const { add, subtract, multiply, divide } = require("./exercise7.js");
+const { add, subtract, multiply, divide } = require("./exercise7");
 
 console.log("Running Unit Tests...");
 
