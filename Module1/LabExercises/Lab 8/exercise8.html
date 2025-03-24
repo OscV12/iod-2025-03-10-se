@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h1>Tabletop Dice Roller</h1>
+      <h1>DevsInc Dice Roller</h1>
       <img
         src="https://cdn.pixabay.com/animation/2023/11/08/17/50/17-50-28-149_512.gif"
         alt="Floaty dice gif"
@@ -18,12 +18,15 @@
     <main>
       <label for="diceType">Choose a dice:</label>
       <select id="diceType">
+        <option value="4">D4</option>
         <option value="6">D6</option>
+        <option value="8">D8</option>
         <option value="10">D10</option>
+        <option value="12">D12</option>
         <option value="20">D20</option>
       </select>
       <button id="rollDice">Roll Dice!</button>
-      <p>Result: <span id="diceResult">-</span></p>
+      <div>Result: <span id="diceResult">-</span></div>
     </main>
     <script src="exercise8.js"></script>
   </body>

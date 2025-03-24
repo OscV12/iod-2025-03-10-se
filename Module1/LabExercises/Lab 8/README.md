@@ -1,3 +1,5 @@
+                            //User Stories\\
+
 1. Select Dice Type
    As a user, I should be able to select the type of dice I want to roll, such as D6, D10, or D20, from a dropdown menu.
 
@@ -24,7 +26,7 @@ The rollDice function should accept a parameter for the number of sides of the d
 
 The function should be invoked whenever the user clicks the "Roll Dice" button.
 
-                         Simple Storyboard of the User Using the System
+                         //Simple Storyboard of the User Using the System\\
 
 Step 1: Landing Page
 User opens the webpage (e.g., in a browser).

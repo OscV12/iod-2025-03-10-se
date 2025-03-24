@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DevsInc Dice Project</title>
+  </head>
+  <body>
+    <h1>DevsInc Dice Roller</h1>
+    <label
+      >How many dice sides?
+      <input
+        type="number"
+        id="numSides"
+        name="numSides"
+        value="6"
+        min="6"
+        max="20"
+      />
+    </label>
+    <button onclick="diceRollAndUpdate()">Roll Dice</button>
+    <div id="dice-result"></div>
+    <script src="./diceRoll.js"></script>
+  </body>
+</html>
