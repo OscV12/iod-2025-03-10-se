@@ -26,14 +26,14 @@ The rollDice function should accept a parameter for the number of sides of the d
 
 The function should be invoked whenever the user clicks the "Roll Dice" button.
 
-                         //Simple Storyboard of the User Using the System\\
+                         //Storyboard of the User Using the System\\
 
 Step 1: Landing Page
-User opens the webpage (e.g., in a browser).
+User opens the webpage.
 
-The page shows a header with the title "Tabletop Dice Roller".
+The page shows a header with the title "DevsInc Dice Roller".
 
-A dropdown menu allows the user to select the dice type (D6, D10, or D20).
+A dropdown menu allows the user to select the dice type (D4, D6, D8, D10, D12 or D20).
 
 A "Roll Dice" button is visible.
 
