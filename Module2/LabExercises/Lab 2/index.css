@@ -1,0 +1,93 @@
+/* I. Selectors */
+/* Put styles for questions 1.1, 1.2, 1.3 and 1.4 here */
+article {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid black;
+}
+.style-me1 {
+  color: red;
+}
+#style-me2 {
+  color: blue;
+}
+#style-me2.style-me1 {
+  color: purple;
+}
+
+/* Put styles for questions 2.1 and 2.2 here */
+.my-descendants-are-styled p {
+  background: red;
+}
+.my-children-are-styled > p {
+  background: lightgreen;
+}
+
+/* II. Box model and common properties */
+/* Put styles for questions 1-8 here */
+
+/* TIP: You can repeat the same CSS rule multiple times and only the last defined one will apply */
+
+.box {
+  background-color: olivedrab;
+  /* 4-value syntax: top right bottom left */
+  margin: 10px 20px 30px 40px;
+  padding: 5px 10px 15px 20px;
+
+  /* 2-value syntax: vertical (top & bottom) , horizontal (left & right) */
+  margin: 15px 25px;
+  padding: 1em 2em; /*1em = the element's current font size */
+
+  /* 1-value syntax: applies to all sides */
+  margin: 5%;
+  padding: 1rem; /*1rem = 16px, 2rem = 32px, 0.5rem = 8px */
+
+  /* Width and height using different dimension units: px, rem, vh, vw*/
+  width: 200px;
+  height: 200px;
+  width: 80rem;
+  height: 10rem;
+  width: 80vw !important; /*vw stands for viewport width */
+  height: 20vh !important; /*vh stands for viewport height */
+  width: 1000px;
+  height: 200px;
+  background-color: brown;
+
+  /* Try 2 or 3 different border styles and colors */
+  border: 5px dashed red;
+  border: 8px double goldenrod !important;
+  border: 10px solid plum;
+
+  /* Test the two different values of box-sizing. How do they affect the width and height of the box elements? */
+  box-sizing: content-box;
+  box-sizing: border-box;
+
+  /* Use overflow to define the behavior when content does not fit inside its container */
+  overflow: scroll; /* Always adds scroll bars, both horizontal & vertical */
+  overflow: hidden; /* Content is cut off and not visible beyond the box */
+  overflow: visible; /* Default behavior – content overflows outside the box */
+  overflow: auto; /* Adds scroll bars only if needed */
+
+  /* Add an outline and observe that setting the outline does not shift the other elements around, like with borders */
+  outline: 10px;
+
+  /* Use border-radius to affect the box corners */
+  border-radius: 20px !important;
+  border-radius: 50em;
+  border-radius: 50%;
+
+  /* Adding a background image */
+  background-image: url(/Module2/LabExercises/Lab\ 2/);
+}
+
+/* III. Positioning */
+/* Put styles for questions 1-3 here */
+
+/* IV. Styling text */
+/* Put styles for questions 1-10 here */
+
+/* V. Styling links */
+/* Put styles for questions 1-3 here */
+
+/* VI. calc() */
+/* Put styles for questions 1-3 here */
