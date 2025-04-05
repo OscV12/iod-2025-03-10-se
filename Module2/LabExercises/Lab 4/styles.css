@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f3f4;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #f0f3f4;
+}
+.sidebar {
+  width: 30%;
+  background-color: powderblue;
+  color: black;
+  padding: 15px;
+  text-align: center;
+}
+.sidebar .profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #f0f3f4;
+}
+.sidebar h1 {
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.sidebar .contact-info,
+.sidebar .skills {
+  margin-top: 20px;
+  text-align: left;
+}
+.sidebar h2 {
+  background-color: #9ebcc0;
+  font-size: 18px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+.sidebar a,
+a:link {
+  color: #868c8c;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 5px;
+  transition: 0.3s ease-in;
+}
+
+.sidebar a:visited {
+  color: rgb(85, 26, 139);
+}
+
+.sidebar a:hover {
+  color: rgb(255, 102, 0);
+  text-decoration: underline;
+}
+
+.sidebar a:active {
+  color: rgb(255, 0, 0);
+}
+.sidebar a:focus {
+  border: 2px solid black;
+}
+
+.content {
+  width: 70%;
+  padding: 20px;
+  color: black;
+}
+.content h2 {
+  background-color: #9ebcc0;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+.content h3 {
+  margin-top: 15px;
+}
+.content ul {
+  padding-left: 20px;
+}
+footer {
+  background-color: #9ebcc0;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
