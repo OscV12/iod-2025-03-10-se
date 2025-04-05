@@ -1,53 +1,58 @@
-body {
-  font-size: 16px;
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f0f3f4;
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f0f3f4;
+  }
 }
-.container {
-  display: flex;
-  width: 80%;
-  max-width: 1000px;
-  margin: auto;
-  background-color: #f0f3f4;
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    background-color: #f0f3f4;
+  }
 }
 .sidebar {
-  width: 30%;
+  width: 100%;
   background-color: powderblue;
   color: black;
-  padding: 15px;
-  text-align: center;
 }
 .sidebar .profile img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 50%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border: 1px solid #f0f3f4;
 }
 .sidebar h1 {
-  font-size: 20px;
+  font-size: 14px;
   margin: 10px 0px;
+  text-align: center;
 }
 .sidebar .contact-info,
 .sidebar .skills {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 }
 .sidebar h2 {
   background-color: #9ebcc0;
-  font-size: 18px;
+  font-size: 14px;
   border-bottom: 1px solid black;
   padding-bottom: 5px;
+  text-align: center;
 }
 .sidebar a,
 a:link {
   color: #868c8c;
-  font-size: 16px;
+  font-size: 12px;
   text-decoration: none;
   padding: 5px;
   transition: 0.3s ease-in;
@@ -63,11 +68,11 @@ a:link {
   color: rgb(255, 0, 0);
 }
 .sidebar a:focus {
-  border: 2px solid black;
+  border: 1px solid black;
 }
 .content {
-  width: 70%;
-  padding: 20px;
+  text-align: center;
+  width: 100%;
   color: black;
 }
 .content h2 {
@@ -78,12 +83,9 @@ a:link {
 .content h3 {
   margin-top: 15px;
 }
-.content ul {
-  padding-left: 20px;
-}
 footer {
-  font-size: 12px;
   background-color: #9ebcc0;
+  font-size: 8px;
   text-align: center;
   padding: 5px;
   width: 100%;
