@@ -9,15 +9,13 @@
     background-color: #f0f3f4;
   }
 }
-@media screen and (max-width: 600px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    margin: auto;
-    background-color: #f0f3f4;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  background-color: #f0f3f4;
 }
 .sidebar {
   width: 100%;
