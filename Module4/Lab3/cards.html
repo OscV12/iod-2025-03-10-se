@@ -32,22 +32,24 @@
     <div id="card-list"></div>
     <script>
       function addCard(title, text) {
-        // clone the template
         const template = document
           .getElementById("card-template")
           .content.cloneNode(true);
-
-        // populate the template with passed-in values
         template.querySelector(".card-title").innerText = title;
         template.querySelector(".card-text").innerText = text;
-
-        // append the card to the page
         document.querySelector("#card-list").appendChild(template);
       }
 
-      // Example usage:
-      addCard("Card 1", "This is the first card.");
-      addCard("Card 2", "This is the second card.");
+      const data = [
+        { name: "Bob", age: 23 },
+        { name: "Alice", age: 39 },
+      ];
+
+      data.forEach((person) => {
+        const title = `Name: ${person.name}`;
+        const text = `Age: ${person.age}`;
+        addCard(title, text);
+      });
     </script>
   </body>
 </html>
