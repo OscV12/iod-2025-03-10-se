@@ -5,23 +5,53 @@
       body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #e3f2fd;
+        padding: 20px;
       }
       .card {
-        padding: 10px;
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       }
       .card-title {
         font-weight: 600;
-        font-size: 3em;
-        padding: 0 0 10px 0;
-      }
-      .card-description {
-        font-weight: 400;
         font-size: 2em;
+        padding-bottom: 10px;
+      }
+      .card-description,
+      .card-text {
+        font-weight: 400;
+        font-size: 1.2em;
+      }
+      .portfolio-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .portfolio-card {
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 10px;
+        width: 200px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+      .portfolio-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .portfolio-title {
+        font-size: 1em;
+        margin-top: 5px;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <template id="card-template">
+    <!-- General Info Card Template (for Exercise 2) -->
+    <template id="info-template">
       <div class="card">
         <div class="card-body">
           <div class="card-title"></div>
@@ -29,27 +59,120 @@
         </div>
       </div>
     </template>
-    <div id="card-list"></div>
-    <script>
-      function addCard(title, text) {
-        const template = document
-          .getElementById("card-template")
-          .content.cloneNode(true);
-        template.querySelector(".card-title").innerText = title;
-        template.querySelector(".card-text").innerText = text;
-        document.querySelector("#card-list").appendChild(template);
-      }
 
+    <!-- Artist Template -->
+    <template id="card-template">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"></div>
+          <div class="card-description"></div>
+          <div class="portfolio-container"></div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Portfolio Item Template -->
+    <template id="portfolio-template">
+      <div class="portfolio-card">
+        <img src="" alt="Artwork" />
+        <div class="portfolio-title"></div>
+      </div>
+    </template>
+
+    <div id="card-list"></div>
+
+    <script>
+      // Exercise 2 data
       const data = [
         { name: "Bob", age: 23 },
         { name: "Alice", age: 39 },
       ];
 
-      data.forEach((person) => {
-        const title = `Name: ${person.name}`;
-        const text = `Age: ${person.age}`;
-        addCard(title, text);
-      });
+      // Add simple cards for name + age
+      function addInfoCard(name, age) {
+        const template = document
+          .getElementById("info-template")
+          .content.cloneNode(true);
+        template.querySelector(".card-title").innerText = name;
+        template.querySelector(".card-text").innerText = `Age: ${age}`;
+        document.getElementById("card-list").appendChild(template);
+      }
+
+      data.forEach((person) => addInfoCard(person.name, person.age));
+
+      // Artist data
+      const artists = [
+        {
+          name: "Van Gogh",
+          description: "Dutch Post-Impressionist painter.",
+          portfolio: [
+            {
+              title: "Portrait",
+              url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image",
+            },
+            {
+              title: "Sky",
+              url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
+            },
+          ],
+        },
+        {
+          name: "Frida Kahlo",
+          description: "Mexican painter known for her self-portraits.",
+          portfolio: [
+            {
+              title: "Self Portrait",
+              url: "https://www.fridakahlo.org/assets/img/paintings/self-portrait-with-necklace-of-thorns.jpg",
+            },
+            {
+              title: "The Broken Column",
+              url: "https://m.media-amazon.com/images/I/71ixv0FECJL._AC_UF894,1000_QL80_.jpg",
+            },
+          ],
+        },
+        {
+          name: "Pablo Picasso",
+          description: "Spanish painter, sculptor, printmaker, ceramicist.",
+          portfolio: [
+            {
+              title: "The Old Guitarist",
+              url: "https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg",
+            },
+            {
+              title: "Girl Before a Mirror",
+              url: "https://upload.wikimedia.org/wikipedia/en/6/60/GirlBeforeAMirror.jpg",
+            },
+          ],
+        },
+      ];
+
+      // Generate artist + portfolio cards
+      function addArtistCard(artist) {
+        const template = document
+          .getElementById("card-template")
+          .content.cloneNode(true);
+        template.querySelector(".card-title").innerText = artist.name;
+        template.querySelector(".card-description").innerText =
+          artist.description;
+
+        const portfolioContainer = template.querySelector(
+          ".portfolio-container"
+        );
+
+        artist.portfolio.forEach((item) => {
+          const portfolioTemplate = document
+            .getElementById("portfolio-template")
+            .content.cloneNode(true);
+          portfolioTemplate.querySelector("img").src = item.url;
+          portfolioTemplate.querySelector(".portfolio-title").innerText =
+            item.title;
+          portfolioContainer.appendChild(portfolioTemplate);
+        });
+
+        document.getElementById("card-list").appendChild(template);
+      }
+
+      artists.forEach(addArtistCard);
     </script>
   </body>
 </html>
