@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Moment.js Date Exercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.40/builds/moment-timezone-with-data.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #31679c;
+      }
+      .result {
+        margin-bottom: 20px;
+      }
+      #londonTime {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Moment.js Date Exercises</h1>
+
+    <div class="result" id="daysBetween"></div>
+    <div class="result" id="exactDifference"></div>
+    <div class="result" id="closestDate"></div>
+    <div class="result" id="dateComparison"></div>
+    <div class="result">
+      <h2>5. Current time in London:</h2>
+      <div id="londonTime"></div>
+    </div>
+
+    <script>
+      const birthDate = moment("1994-10-01");
+      const now = moment();
+
+      // 1. Days between
+      const daysBetween = now.diff(birthDate, "days");
+      document.getElementById(
+        "daysBetween"
+      ).innerHTML = `<h2>1. Days between birthdate and today:</h2> ${daysBetween} days`;
+
+      // 2. Exact years, months, days
+      const years = now.diff(birthDate, "years");
+      birthDate.add(years, "years");
+      const months = now.diff(birthDate, "months");
+      birthDate.add(months, "months");
+      const days = now.diff(birthDate, "days");
+      document.getElementById(
+        "exactDifference"
+      ).innerHTML = `<h2>2. Exact difference:</h2> ${years} years, ${months} months, and ${days} days`;
+
+      // Reset birthDate for future comparisons
+      const resetBirthDate = moment("1994-10-01");
+
+      // 3. Closest date to today
+      const date1 = moment("2024-12-25");
+      const date2 = moment("2023-06-01");
+      const closest =
+        Math.abs(now.diff(date1)) < Math.abs(now.diff(date2)) ? date1 : date2;
+
+      document.getElementById("closestDate").innerHTML = `
+      <h2>3. Closest to today:</h2>
+      Date 1: ${date1.format("LL")}<br>
+      Date 2: ${date2.format("LL")}<br>
+      <strong>Closest:</strong> ${closest.format("LL")}
+    `;
+
+      // 4. Date comparison
+      const comparison = date1.isBefore(date2)
+        ? "Date 1 is before Date 2"
+        : "Date 1 is after or equal to Date 2";
+      document.getElementById("dateComparison").innerHTML = `
+      <h2>4. Date comparison:</h2>
+      Comparing: ${date1.format("LL")} vs ${date2.format("LL")}<br>
+      <strong>${comparison}</strong>
+    `;
+
+      // 5. Live London clock in 12-hour format
+      function updateLondonTime() {
+        const londonTime = moment().tz("Europe/London").format("hh:mm:ss A");
+        document.getElementById("londonTime").textContent = londonTime;
+      }
+
+      updateLondonTime();
+      setInterval(updateLondonTime, 1000);
+    </script>
+  </body>
+</html>

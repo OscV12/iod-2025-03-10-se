@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luxon Date Exercises</title>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #31679c;
+      }
+      .result {
+        margin-bottom: 20px;
+      }
+      #londonTime {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Luxon Date Exercises</h1>
+
+    <div class="result" id="daysBetween"></div>
+    <div class="result" id="exactDifference"></div>
+    <div class="result" id="closestDate"></div>
+    <div class="result" id="dateComparison"></div>
+    <div class="result">
+      <h2>5. Current time in London:</h2>
+      <div id="londonTime"></div>
+    </div>
+
+    <script>
+      const { DateTime } = luxon;
+
+      // Birthdate and current date
+      const birthDate = DateTime.fromISO("1994-10-01");
+      const now = DateTime.now();
+
+      // 1. Days between
+      const daysBetween = Math.floor(now.diff(birthDate, "days").days);
+      document.getElementById(
+        "daysBetween"
+      ).innerHTML = `<h2>1. Days between birthdate and today:</h2> ${daysBetween} days`;
+
+      // 2. Exact years/months/days
+      const diff = now.diff(birthDate, ["years", "months", "days"]).toObject();
+      document.getElementById(
+        "exactDifference"
+      ).innerHTML = `<h2>2. Exact difference:</h2> ${Math.floor(
+        diff.years
+      )} years, ${Math.floor(diff.months)} months, and ${Math.floor(
+        diff.days
+      )} days`;
+
+      // 3 & 4. Dates to compare
+      const date1 = DateTime.fromISO("2024-12-25");
+      const date2 = DateTime.fromISO("2023-06-01");
+
+      const closest =
+        Math.abs(now.diff(date1)) < Math.abs(now.diff(date2)) ? date1 : date2;
+      document.getElementById(
+        "closestDate"
+      ).innerHTML = `<h2>3. Closest to today:</h2>
+       Date 1: ${date1.toLocaleString(DateTime.DATE_FULL)}<br>
+       Date 2: ${date2.toLocaleString(DateTime.DATE_FULL)}<br>
+       <strong>Closest:</strong> ${closest.toLocaleString(DateTime.DATE_FULL)}`;
+
+      // 4. Date comparison
+      const comparison =
+        date1 < date2
+          ? "Date 1 is before Date 2"
+          : "Date 1 is after or equal to Date 2";
+      document.getElementById(
+        "dateComparison"
+      ).innerHTML = `<h2>4. Date comparison:</h2>
+       Comparing: ${date1.toLocaleString(
+         DateTime.DATE_FULL
+       )} vs ${date2.toLocaleString(DateTime.DATE_FULL)}<br>
+       <strong>${comparison}</strong>`;
+
+      // 5. Live London clock in 12-hour format with AM/PM
+      function updateLondonTime() {
+        const londonNow = DateTime.now()
+          .setZone("Europe/London")
+          .toFormat("hh:mm:ss a");
+        document.getElementById("londonTime").textContent = londonNow;
+      }
+
+      updateLondonTime(); // initial call
+      setInterval(updateLondonTime, 1000); // update every second
+    </script>
+  </body>
+</html>

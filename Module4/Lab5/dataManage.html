@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>News Feed</title>
+    <link rel="stylesheet" href="dataManage.css" />
+  </head>
+  <body>
+    <h1>Latest News</h1>
+
+    <div class="form-section">
+      <form id="news-form">
+        <input type="text" id="title" placeholder="News Title" required />
+        <textarea id="content" placeholder="News Content" required></textarea>
+        <button type="submit">Add News</button>
+      </form>
+      <button onclick="stopUpdates()">Stop Auto Refresh</button>
+    </div>
+
+    <div id="news-container"></div>
+
+    <script src="dataManage.js"></script>
+  </body>
+</html>

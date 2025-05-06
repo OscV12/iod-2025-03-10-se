@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Animation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #f5f5f5;
+      }
+
+      .square {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation: slideColor 3s infinite;
+      }
+
+      @keyframes slideColor {
+        0% {
+          top: 0;
+          background-color: red;
+        }
+        50% {
+          top: 200px;
+          background-color: blue;
+        }
+        100% {
+          top: 0;
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square"></div>
+  </body>
+</html>
