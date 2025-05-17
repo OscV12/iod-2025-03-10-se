@@ -5,7 +5,6 @@ const sortSelect = document.getElementById("sortSelect");
 
 let allProducts = [];
 
-// Fetch products from API
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((data) => {
